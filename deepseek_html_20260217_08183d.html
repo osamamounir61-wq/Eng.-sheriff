@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المهندس شريف مصطفى مصطفى | انتخابات نقابة المهندسين 2026</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: linear-gradient(135deg, #f6f9fc 0%, #edf2f9 100%);
+            color: #1e2b3a;
+            line-height: 1.6;
+        }
+
+        /* تصميم الغلاف مع الأرقام */
+        .cover {
+            background: linear-gradient(165deg, #0a2e5a 0%, #1e4b7a 50%, #2b6ca3 100%);
+            color: white;
+            padding: 40px 20px 80px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border-bottom: 6px solid #c9a227;
+        }
+
+        .cover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><path d="M20 20 L80 20 L80 80 L20 80 Z" fill="none" stroke="%23c9a227" stroke-width="2"/><circle cx="50" cy="50" r="30" fill="none" stroke="%23c9a227" stroke-width="2"/><path d="M30 30 L70 70 M70 30 L30 70" stroke="%23c9a227" stroke-width="2"/></svg>');
+            background-size: 150px 150px;
+            animation: moveBackground 60s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            from { transform: rotate(0deg) scale(1); }
+            to { transform: rotate(360deg) scale(1.5); }
+        }
+
+        .cover-content {
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* الصورة الشخصية */
+        .profile-image {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #c9a227, #e5b83a);
+            padding: 8px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            animation: profileFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes profileFloat {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0); }
+        }
+
+        .profile-image-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1a4a7a, #2b6ca3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid white;
+            overflow: hidden;
+        }
+
+        .profile-image-inner i {
+            font-size: 120px;
+            color: #c9a227;
+            opacity: 0.9;
+        }
+
+        .candidate-info {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+
+        .candidate-name {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.2;
+        }
+
+        .candidate-name-ar {
+            font-size: 3rem;
+            color: #c9a227;
+            margin-bottom: 15px;
+        }
+
+        /* أرقام المرشح في الغلاف */
+        .cover-numbers {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+
+        .cover-number-card {
+            background: linear-gradient(145deg, #c9a227, #e5b83a);
+            color: #0a2e5a;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+            border: 5px solid white;
+            position: relative;
+            animation: numberPulse 2s infinite;
+        }
+
+        .cover-number-card::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.3);
+            animation: ringPulse 2s infinite;
+        }
+
+        @keyframes ringPulse {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.3); opacity: 0; }
+        }
+
+        @keyframes numberPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .cover-number-card .number {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .cover-number-card .label {
+            font-size: 1.2rem;
+            font-weight: 700;
+            background: rgba(10,46,90,0.2);
+            padding: 3px 20px;
+            border-radius: 30px;
+            margin-top: 5px;
+        }
+
+        .number-description {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.9);
+            margin-top: 15px;
+        }
+
+        /* بطاقات المعلومات السريعة */
+        .quick-info-bar {
+            max-width: 1200px;
+            margin: -50px auto 0;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            position: relative;
+            z-index: 20;
+        }
+
+        .quick-info-card {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(10,46,90,0.15);
+            border: 1px solid rgba(201,162,39,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .quick-info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(10,46,90,0.25);
+            border-color: #c9a227;
+        }
+
+        .quick-info-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #0a2e5a, #1e4b7a);
+            color: #c9a227;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 30px;
+            border: 3px solid #c9a227;
+        }
+
+        .quick-info-label {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #0a2e5a;
+            margin-bottom: 5px;
+        }
+
+        .quick-info-value {
+            font-size: 1.5rem;
+            color: #1e4b7a;
+            font-weight: 600;
+        }
+
+        /* تفاصيل الانتخابات */
+        .election-details {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .details-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .details-title {
+            font-size: 2.8rem;
+            color: #0a2e5a;
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .details-subtitle {
+            font-size: 1.8rem;
+            color: #c9a227;
+            font-weight: 600;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .detail-card {
+            background: white;
+            border-radius: 30px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .detail-card:hover {
+            border-color: #c9a227;
+            transform: translateY(-5px);
+        }
+
+        .detail-card.highlight {
+            background: linear-gradient(135deg, #0a2e5a, #1e4b7a);
+            color: white;
+        }
+
+        .detail-card.highlight .detail-title {
+            color: #c9a227;
+        }
+
+        .detail-icon {
+            font-size: 40px;
+            color: #c9a227;
+            margin-bottom: 20px;
+        }
+
+        .detail-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #0a2e5a;
+        }
+
+        .detail-text {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .detail-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .detail-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+
+        .detail-list i {
+            color: #c9a227;
+            font-size: 1.3rem;
+        }
+
+        .location-box {
+            background: #f0f4f8;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-right: 5px solid #c9a227;
+        }
+
+        .location-box p {
+            font-size: 1.2rem;
+            color: #0a2e5a;
+            margin: 5px 0;
+        }
+
+        /* رسالة المرشح */
+        .message-section {
+            background: white;
+            border-radius: 40px;
+            padding: 60px;
+            margin: 60px auto;
+            max-width: 1200px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .message-section::before {
+            content: '"';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            font-size: 250px;
+            color: rgba(201,162,39,0.1);
+            font-family: serif;
+            line-height: 1;
+            transform: rotate(180deg);
+        }
+
+        .message-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .message-title {
+            font-size: 2.5rem;
+            color: #0a2e5a;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .message-text {
+            font-size: 1.4rem;
+            line-height: 1.9;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .signature {
+            text-align: left;
+            font-size: 1.8rem;
+            color: #0a2e5a;
+            font-weight: 700;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 3px solid #c9a227;
+        }
+
+        /* قسم الدعم */
+        .support-section {
+            background: linear-gradient(135deg, #0a2e5a, #1a4a7a);
+            border-radius: 40px;
+            padding: 70px 40px;
+            margin: 60px auto;
+            max-width: 1200px;
+            text-align: center;
+            color: white;
+            border: 4px solid #c9a227;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .support-section::before {
+            content: '٥ ١٢';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 180px;
+            font-weight: 900;
+            opacity: 0.1;
+            color: #c9a227;
+            transform: rotate(-15deg);
+        }
+
+        .support-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .support-date {
+            font-size: 2.5rem;
+            color: #c9a227;
+            font-weight: 700;
+            margin: 20px 0;
+            background: rgba(255,255,255,0.1);
+            padding: 15px 40px;
+            display: inline-block;
+            border-radius: 50px;
+        }
+
+        .support-text {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+        }
+
+        .counter-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 50px 0;
+            flex-wrap: wrap;
+        }
+
+        .counter-box {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px 40px;
+            border-radius: 30px;
+            min-width: 200px;
+            border: 2px solid #c9a227;
+        }
+
+        .counter-number {
+            font-size: 4.5rem;
+            font-weight: 800;
+            color: #c9a227;
+            line-height: 1;
+        }
+
+        .counter-label {
+            font-size: 1.3rem;
+            margin-top: 10px;
+        }
+
+        .support-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .btn {
+            padding: 18px 50px;
+            font-size: 1.6rem;
+            border-radius: 60px;
+            border: none;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-primary {
+            background: #c9a227;
+            color: #0a2e5a;
+            box-shadow: 0 10px 20px rgba(201,162,39,0.3);
+        }
+
+        .btn-primary:hover {
+            background: #e5b83a;
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(201,162,39,0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: white;
+            border: 3px solid #c9a227;
+        }
+
+        .btn-outline:hover {
+            background: #c9a227;
+            color: #0a2e5a;
+            transform: scale(1.05);
+        }
+
+        /* التوقيت العد التنازلي */
+        .countdown-section {
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            margin: 60px auto;
+            max-width: 1200px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .countdown-title {
+            font-size: 2.2rem;
+            color: #0a2e5a;
+            margin-bottom: 30px;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: linear-gradient(135deg, #0a2e5a, #1e4b7a);
+            color: white;
+            width: 120px;
+            height: 120px;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid #c9a227;
+        }
+
+        .countdown-number {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .countdown-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .footer {
+            background: #051f34;
+            color: white;
+            padding: 60px 20px 30px;
+            text-align: center;
+            border-top: 5px solid #c9a227;
+        }
+
+        .footer-numbers-large {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin: 30px 0;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #c9a227;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .social-link {
+            width: 60px;
+            height: 60px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.8rem;
+            transition: all 0.3s ease;
+            border: 2px solid #c9a227;
+        }
+
+        .social-link:hover {
+            background: #c9a227;
+            color: #051f34;
+            transform: translateY(-5px);
+        }
+
+        .footer-text {
+            font-size: 1.3rem;
+            margin: 20px 0;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .candidate-name {
+                font-size: 2.8rem;
+            }
+            
+            .candidate-name-ar {
+                font-size: 2rem;
+            }
+            
+            .profile-image {
+                width: 220px;
+                height: 220px;
+            }
+            
+            .cover-number-card {
+                width: 110px;
+                height: 110px;
+            }
+            
+            .cover-number-card .number {
+                font-size: 3rem;
+            }
+            
+            .details-title {
+                font-size: 2rem;
+            }
+            
+            .details-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .message-text {
+                font-size: 1.2rem;
+            }
+            
+            .support-title {
+                font-size: 2.2rem;
+            }
+            
+            .support-date {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cover with numbers -->
+    <section class="cover">
+        <div class="cover-content">
+            <div class="profile-image">
+                <div class="profile-image-inner">
+                    <img src="./images/eng.jpg" alt="alternatetext">
+                </div>
+            </div>
+            <div class="candidate-info">
+                <div class="candidate-name-ar">المهندس</div>
+                <h1 class="candidate-name">شريف مصطفى مصطفى</h1>
+                
+                <!-- أرقام المرشح في الغلاف -->
+                <div class="cover-numbers">
+                    <div class="cover-number-card">
+                        <div class="number">٥</div>
+                        <div class="label">رقم (٥)</div>
+                    </div>
+                    <div class="cover-number-card">
+                        <div class="number">١٢</div>
+                        <div class="label">رقم (١٢)</div>
+                    </div>
+                </div>
+                
+                <div class="number-description">
+                    <p><i class="fas fa-check-circle" style="color: #c9a227;"></i> عضو مجلس نقابة القاهرة فرعيه رقم (٥) - يحق التصويت لكل الأقسام الهندسية</p>
+                    <p><i class="fas fa-check-circle" style="color: #c9a227;"></i> عضو مجلس شعبه ميكانيكا رقم (١٢) - يحق التصويت لجميع مهندسي ميكانيكا الجمهورية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Info Bar -->
+    <div class="quick-info-bar">
+        <div class="quick-info-card">
+            <div class="quick-info-icon">
+                <i class="fas fa-calendar-alt"></i>
+            </div>
+            <div class="quick-info-label">تاريخ الانتخاب</div>
+            <div class="quick-info-value">٢٧ فبراير ٢٠٢٦</div>
+        </div>
+        <div class="quick-info-card">
+            <div class="quick-icon">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="quick-info-label">المكان</div>
+            <div class="quick-info-value">قاعة المؤتمرات - بجوار ستاد القاهرة</div>
+        </div>
+        <div class="quick-info-card">
+            <div class="quick-info-icon">
+                <i class="fas fa-users"></i>
+            </div>
+            <div class="quick-info-label">الناخبون</div>
+            <div class="quick-info-value">جميع الأقسام - جميع المحافظات</div>
+        </div>
+        <div class="quick-info-card">
+            <div class="quick-info-icon">
+                <i class="fas fa-vote-yea"></i>
+            </div>
+            <div class="quick-info-label">الأرقام</div>
+            <div class="quick-info-value">(٥) و (١٢)</div>
+        </div>
+    </div>
+
+    <!-- Election Details Section -->
+    <section class="election-details">
+        <div class="details-header">
+            <h2 class="details-title">تفاصيل انتخابات نقابة المهندسين ٢٠٢٦</h2>
+            <div class="details-subtitle">تحت شعار: معاً لمهنة أفضل</div>
+        </div>
+
+        <div class="details-grid">
+            <!-- First Position -->
+            <div class="detail-card">
+                <div class="detail-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <h3 class="detail-title">المنصب الأول</h3>
+                <div class="detail-text">
+                    <strong style="color: #c9a227;">عضو مجلس نقابة القاهرة فرعيه</strong>
+                </div>
+                <div class="location-box">
+                    <p><i class="fas fa-hashtag"></i> <strong>رقم (٥)</strong></p>
+                    <p><i class="fas fa-users"></i> يحق التصويت: جميع الأقسام الهندسية بنقابة القاهرة</p>
+                </div>
+                <ul class="detail-list">
+                    <li><i class="fas fa-check-circle"></i> التصويت متاح لجميع المهندسين بالقاهرة</li>
+                    <li><i class="fas fa-check-circle"></i> تمثيل جميع التخصصات الهندسية</li>
+                </ul>
+            </div>
+
+            <!-- Second Position -->
+            <div class="detail-card">
+                <div class="detail-icon">
+                    <i class="fas fa-gear"></i>
+                </div>
+                <h3 class="detail-title">المنصب الثاني</h3>
+                <div class="detail-text">
+                    <strong style="color: #c9a227;">عضو مجلس شعبه ميكانيكا</strong>
+                </div>
+                <div class="location-box">
+                    <p><i class="fas fa-hashtag"></i> <strong>رقم (١٢)</strong></p>
+                    <p><i class="fas fa-globe"></i> يحق التصويت: جميع مهندسي ميكانيكا الجمهورية</p>
+                    <p><i class="fas fa-map-marker-alt"></i> جميع المحافظات</p>
+                </div>
+                <ul class="detail-list">
+                    <li><i class="fas fa-check-circle"></i> تصويت مفتوح لكل مهندسي الميكانيكا</li>
+                    <li><i class="fas fa-check-circle"></i> تمثيل على مستوى الجمهورية</li>
+                </ul>
+            </div>
+
+            <!-- Location & Time -->
+            <div class="detail-card highlight">
+                <div class="detail-icon">
+                    <i class="fas fa-map-pin"></i>
+                </div>
+                <h3 class="detail-title" style="color: #c9a227;">مكان الانتخابات</h3>
+                <div class="detail-text" style="font-size: 1.5rem;">
+                    <i class="fas fa-location-dot"></i> قاعة المؤتمرات
+                </div>
+                <p style="font-size: 1.3rem; margin: 10px 0;">بجوار ستاد القاهرة الدولي</p>
+                <div style="background: rgba(255,255,255,0.2); padding: 20px; border-radius: 15px; margin-top: 20px;">
+                    <p style="font-size: 1.3rem;"><i class="fas fa-clock"></i> موعد الانتخابات: ٢٧ فبراير ٢٠٢٦</p>
+                    <p style="font-size: 1.3rem;"><i class="fas fa-door-open"></i> أبواب اللجان مفتوحة من ٩ صباحاً حتى ٨ مساءً</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Candidate Message -->
+    <section class="message-section">
+        <div class="message-content">
+            <h2 class="message-title">كلمة المهندس شريف مصطفى مصطفى</h2>
+            <div class="message-text">
+                <p>إخواني وزملائي الأعزاء،</p>
+                <p>أتقدم إليكم بأسمى آيات التقدير والاحترام، وأضع بين أيديكم خبرتي العملية التي تمتد لأكثر من ٢٥ عاماً في المجال الهندسي. أترشح لعضوية مجلس نقابة القاهرة فرعيه رقم (٥) وعضوية مجلس شعبة ميكانيكا رقم (١٢).</p>
+                <p>أعدكم بالعمل الجاد والمخلص للارتقاء بمهنة الهندسة، وتحسين الخدمات النقابية، والدفاع عن حقوق المهندسين في جميع المحافل. خبرتي في إدارة المشروعات الكبرى وقيادة الفرق الهندسية تؤهلني لتمثيلكم خير تمثيل.</p>
+                <p>صوتكم هو الأمل في تحقيق برنامجنا الطموح. معاً نصنع مستقبلاً أفضل للمهندس المصري.</p>
+            </div>
+            <div class="signature">
+                المهندس / شريف مصطفى مصطفى
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Timer -->
+    <section class="countdown-section">
+        <h2 class="countdown-title">العد التنازلي ليوم الانتخاب</h2>
+        <div class="countdown-timer" id="countdown">
+            <div class="countdown-item">
+                <span class="countdown-number" id="days">٠</span>
+                <span class="countdown-label">يوم</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="hours">٠</span>
+                <span class="countdown-label">ساعة</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="minutes">٠</span>
+                <span class="countdown-label">دقيقة</span>
+            </div>
+            <div class="countdown-item">
+                <span class="countdown-number" id="seconds">٠</span>
+                <span class="countdown-label">ثانية</span>
+            </div>
+        </div>
+        <p style="font-size: 1.5rem; color: #0a2e5a; margin-top: 30px;">٢٧ فبراير ٢٠٢٦ - في انتظار دعمكم</p>
+    </section>
+
+    <!-- Support Section -->
+    <section class="support-section">
+        <h2 class="support-title">اخوتي وزملائي الأعزاء</h2>
+        <div class="support-date">🗳️ ٢٧ فبراير ٢٠٢٦</div>
+        <p class="support-text">في انتظار دعمكم لنا في انتخابات نقابة المهندسين</p>
+        
+        <div class="counter-container">
+            <div class="counter-box">
+                <div class="counter-number" id="supportersCount">٠</div>
+                <div class="counter-label">مهندس يدعمون</div>
+            </div>
+            <div class="counter-box">
+                <div class="counter-number" id="targetPercent">٠٪</div>
+                <div class="counter-label">من المستهدف</div>
+            </div>
+            <div class="counter-box">
+                <div class="counter-number">١٠٠٠٠</div>
+                <div class="counter-label">المستهدف</div>
+            </div>
+        </div>
+
+        <div class="support-buttons">
+            <button class="btn btn-primary" onclick="increaseSupport()">
+                <i class="fas fa-heart"></i> سجل دعمك الآن
+            </button>
+            <button class="btn btn-outline" onclick="shareCampaign()">
+                <i class="fas fa-share-alt"></i> انشر الحملة
+            </button>
+        </div>
+
+        <p style="margin-top: 30px; font-size: 1.3rem;">
+            <i class="fas fa-check-circle" style="color: #c9a227;"></i> 
+            مجلس نقابة القاهرة فرعيه (٥) - جميع الأقسام
+            <br>
+            <i class="fas fa-check-circle" style="color: #c9a227;"></i> 
+            مجلس شعبة ميكانيكا (١٢) - جميع محافظات الجمهورية
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <h2 style="font-size: 2.5rem; margin-bottom: 10px;">المهندس شريف مصطفى مصطفى</h2>
+        <p style="font-size: 1.5rem; color: #c9a227; margin-bottom: 20px;">مرشح مجلس نقابة المهندسين ٢٠٢٦</p>
+        
+        <div class="footer-numbers-large">
+            <span>رقم (٥) - مجلس نقابة القاهرة فرعيه</span>
+            <span>رقم (١٢) - مجلس شعبة ميكانيكا</span>
+        </div>
+
+        <div class="social-links">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-telegram-plane"></i></a>
+        </div>
+
+        <div class="footer-text">
+            <p><i class="fas fa-map-marker-alt" style="color: #c9a227;"></i> قاعة المؤتمرات - بجوار ستاد القاهرة الدولي</p>
+            <p><i class="fas fa-calendar-alt" style="color: #c9a227;"></i> ٢٧ فبراير ٢٠٢٦ | من ٩ صباحاً إلى ٨ مساءً</p>
+        </div>
+
+        <p style="margin-top: 40px; font-size: 1.2rem; opacity: 0.7;">جميع الحقوق محفوظة © ٢٠٢٦ - حملة المهندس شريف مصطفى مصطفى</p>
+    </footer>
+
+    <script>
+        // Supporters counter
+        let supporters = 2350; // Starting number
+        const target = 10000;
+
+        function updateCounters() {
+            document.getElementById('supportersCount').innerText = supporters.toLocaleString('ar-EG');
+            let percent = Math.round((supporters / target) * 100);
+            document.getElementById('targetPercent').innerText = percent + '٪';
+        }
+
+        function increaseSupport() {
+            supporters++;
+            updateCounters();
+            
+            // Button animation
+            const btn = event.target.closest('.btn');
+            btn.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                btn.style.transform = 'scale(1)';
+            }, 200);
+            
+            alert('شكراً جزيلاً لدعمك! تم إضافة صوتك للمهندس شريف مصطفى مصطفى (رقم ٥ و ١٢)');
+        }
+
+        function shareCampaign() {
+            const shareText = 'أدعم المهندس شريف مصطفى مصطفى في انتخابات نقابة المهندسين ٢٠٢٦ - رقم (٥) مجلس نقابة القاهرة فرعيه ورقم (١٢) مجلس شعبة ميكانيكا';
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: 'دعم المهندس شريف مصطفى مصطفى',
+                    text: shareText,
+                    url: window.location.href,
+                }).catch(() => {
+                    prompt('انسخ الرابط لمشاركة الحملة:', shareText + '\n' + window.location.href);
+                });
+            } else {
+                prompt('انسخ الرابط لمشاركة الحملة:', shareText + '\n' + window.location.href);
+            }
+        }
+
+        // Countdown Timer
+        function updateCountdown() {
+            const electionDate = new Date(2026, 1, 27); // February 27, 2026
+            const now = new Date();
+            const diff = electionDate - now;
+
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                document.getElementById('days').innerText = days.toLocaleString('ar-EG');
+                document.getElementById('hours').innerText = hours.toLocaleString('ar-EG');
+                document.getElementById('minutes').innerText = minutes.toLocaleString('ar-EG');
+                document.getElementById('seconds').innerText = seconds.toLocaleString('ar-EG');
+            }
+        }
+
+        // Initialize
+        window.onload = function() {
+            updateCounters();
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+
+            // Animate supporters counter
+            let start = 0;
+            let end = supporters;
+            let duration = 2000;
+            let stepTime = 20;
+            let steps = duration / stepTime;
+            let increment = end / steps;
+            
+            let counter = setInterval(function() {
+                start += increment;
+                if (start >= end) {
+                    start = end;
+                    clearInterval(counter);
+                }
+                document.getElementById('supportersCount').innerText = Math.floor(start).toLocaleString('ar-EG');
+            }, stepTime);
+        };
+    </script>
+</body>
+</html>
